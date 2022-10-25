@@ -1,0 +1,105 @@
+@use './style/variables' as *;
+@use './style/mixins' as *;
+@import './style/normalize';
+@import './style/general';
+@import './main/services';
+@import './main/partners';
+@import './style/main';
+@import './style/fonts';
+
+.services__title {
+    margin-top: 40px;
+}
+
+.title-partner {
+    margin-top: 50px;
+}
+
+// navigation 
+
+.header__link {
+    text-decoration: none;
+    &::after {
+        content: 'services';
+        @include font(20px, 24px);
+        color: #FFFFFF;
+        position: absolute;
+        margin-left: 20px;
+    }
+    &::before {
+        content: '';
+        background-image: url(../images/header/slash.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 12px;
+        height: 26px;
+        position: absolute;
+        left: 90px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        &__link {
+            &::after {
+                content: 'services';
+                @include font(36px, 44px);
+                margin-left: 30px;
+            }
+            &::before {
+                content: '';
+                left: 135px;
+                width: 21px;
+                height: 47px;
+            }
+        }
+        &__nav {
+            .menu {
+                &__link {
+                    &:nth-child(2) {
+                        color: #F0145A;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            border-bottom: 2px solid #F0145A;
+                            position: absolute;
+                            width: 69px;
+                            top: 20px;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .services__title {
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        &__link {
+            &::before {
+                content: '';
+                left: 200px;
+            }
+            &::after {
+                margin-left: 35px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    .header {
+        &__link {
+            &::before {
+                content: '';
+                left: 300px;
+            }
+        }
+    }
+}

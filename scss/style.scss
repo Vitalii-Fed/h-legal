@@ -1,0 +1,14 @@
+@use './style/variables' as *;
+@use './style/mixins' as *;
+@import './style/normalize';
+@import './style/fonts';
+@import './style/general';
+@import './main/services';
+@import './main/partners';
+@import './main/team';
+@import './main/publications';
+@import './footer/footer';
+@import './main/benefits';
+@import './header/header';
+@import './style/form';
+@import './header/navigation';
